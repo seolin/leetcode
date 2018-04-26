@@ -15,27 +15,28 @@ import java.util.Map;
  */
 public class Solution3 {
     public static void main(String[] args) {
-        String s = "abcabcbb";
+        String s = "abcdefghigklmnopqrstuvwxyz请注意答案必须是一个子串，pwke 是 子序列  而不是子串";
         System.out.println(lengthOfLongestSubstring(s));
     }
 
     public static int lengthOfLongestSubstring(String s) {
         char[] charList = s.toCharArray();
-        Map<Integer, Character> map = new HashMap<>();
-        int i = 0;
+        Map<Character, Integer> map = new HashMap<>();
         int max = 0;
-        for (char c : charList) {
-            if (map.containsValue(c)) {
+        for (int i = 0; i < charList.length; i++) {
+            if (map.containsKey(charList[i])) {
                 if (max < map.size()) {
                     max = map.size();
                 }
-                i = 0;
+                i = map.get(charList[i]) + 1;
                 map.clear();
-                map.put(i, c);
+                map.put(charList[i], i);
             } else {
-                map.put(i, c);
+                map.put(charList[i], i);
             }
-            i++;
+        }
+        if (map.size() > max) {
+            max = map.size();
         }
         return max;
     }
