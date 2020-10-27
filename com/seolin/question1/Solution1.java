@@ -1,4 +1,4 @@
-package com.seolin.towsum;
+package com.seolin.question1;
 
 import java.util.HashMap;
 import java.util.Map;

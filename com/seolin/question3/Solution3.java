@@ -1,11 +1,11 @@
-package com.seolin.lengthoflongestsubstring;
+package com.seolin.question3;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @Author: kangkangchen
- * @Description: 无重复字符的最长子串
+ * @Description: 3.无重复字符的最长子串
  * 给定一个字符串，找出不含有重复字符的最长子串的长度。
  * 示例：
  * 给定 "abcabcbb" ，没有重复字符的最长子串是 "abc" ，那么长度就是3。
