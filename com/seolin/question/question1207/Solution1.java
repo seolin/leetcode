@@ -1,4 +1,4 @@
-package com.seolin.question1207;
+package com.seolin.question.question1207;
 
 import java.util.HashMap;
 import java.util.HashSet;

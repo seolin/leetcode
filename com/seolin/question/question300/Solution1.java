@@ -1,6 +1,4 @@
-package com.seolin.question300;
-
-import java.util.Arrays;
+package com.seolin.question.question300;
 
 /**
  * @author liangzi on 2020/10/26

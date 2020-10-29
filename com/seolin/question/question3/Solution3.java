@@ -1,4 +1,4 @@
-package com.seolin.question3;
+package com.seolin.question.question3;
 
 import java.util.HashMap;
 import java.util.Map;
