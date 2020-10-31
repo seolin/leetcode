@@ -27,18 +27,18 @@ public class Solution {
         dp[0][0] = true;
         char[] words = s.toCharArray();
         String ans = String.valueOf(words[0]);
-        for (int l = 0; l < s.length(); l++) {
-            for (int i = 0; i + l < s.length(); i++) {
-                int j = i + l;
-                if (l == 0) {
+        for (int length = 0; length < s.length(); length++) {
+            for (int i = 0; i + length < s.length(); i++) {
+                int j = i + length;
+                if (length == 0) {
                     dp[i][j] = true;
-                } else if (l == 1) {
+                } else if (length == 1) {
                     dp[i][j] = words[i] == words[j];
                 } else {
                     dp[i][j] = words[i] == words[j] && dp[i + 1][j - 1];
                 }
-                if (dp[i][j] && l + 1 > ans.length()) {
-                    ans = s.substring(i, j + 1);
+                if (dp[i][j] && length + 1 > ans.length()) {
+                    ans = s.substring(i, length + i + 1);
                 }
             }
         }
