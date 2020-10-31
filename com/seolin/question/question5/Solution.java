@@ -15,7 +15,7 @@ package com.seolin.question.question5;
  */
 public class Solution {
     public static void main(String[] args) {
-        String txt = "cbaba";
+        String txt = "cbbd";
         System.out.println(new Solution().longestPalindrome(txt));
     }
 
@@ -26,7 +26,8 @@ public class Solution {
         boolean[][] dp = new boolean[s.length()][s.length()];
         dp[0][0] = true;
         char[] words = s.toCharArray();
-        String ans = String.valueOf(words[0]);
+        int[] point = {0, 1};
+        int max = 1;
         for (int length = 0; length < s.length(); length++) {
             for (int i = 0; i + length < s.length(); i++) {
                 int j = i + length;
@@ -37,12 +38,13 @@ public class Solution {
                 } else {
                     dp[i][j] = words[i] == words[j] && dp[i + 1][j - 1];
                 }
-                if (dp[i][j] && length + 1 > ans.length()) {
-                    ans = s.substring(i, length + i + 1);
+                if (dp[i][j] && length + 1 > max) {
+                    point[0] = i;
+                    point[1] = i + length + 1;
                 }
             }
         }
-        return ans;
+        return s.substring(point[0], point[1]);
     }
 
 }
