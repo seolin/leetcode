@@ -18,6 +18,9 @@ package com.seolin.question.question1000.question501t600.question556;
 
 /**
  * 349. 两个数组的交集
+ * 注意事项
+ * 1. int 最大值
+ * 2. 边界条件
  *
  * @author liangzi on 2020/11/2
  */
