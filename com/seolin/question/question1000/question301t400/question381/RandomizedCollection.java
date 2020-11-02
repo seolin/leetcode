@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question381;
+package com.seolin.question.question1000.question301t400.question381;
 //381. O(1) 时间插入、删除和获取随机元素 - 允许重复
 // 设计一个支持在平均 时间复杂度 O(1) 下， 执行以下操作的数据结构。
 //

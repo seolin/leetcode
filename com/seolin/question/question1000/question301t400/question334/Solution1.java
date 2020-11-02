@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question334;
+package com.seolin.question.question1000.question301t400.question334;
 
 /**
  * 334. 递增的三元子序列
