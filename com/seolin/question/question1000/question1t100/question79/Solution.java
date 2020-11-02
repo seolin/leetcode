@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question79;
+package com.seolin.question.question1000.question1t100.question79;
 
 
 /**

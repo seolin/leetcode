@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question2;
+package com.seolin.question.question1000.question1t100.question2;
 
 /**
  * @Author: kangkangchen

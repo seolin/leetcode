@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question5;
+package com.seolin.question.question1000.question1t100.question5;
 
 /**
  * 5. 最长回文子串

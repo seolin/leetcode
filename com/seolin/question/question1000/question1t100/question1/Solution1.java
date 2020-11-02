@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question1;
+package com.seolin.question.question1000.question1t100.question1;
 
 import java.util.Arrays;
 import java.util.HashMap;

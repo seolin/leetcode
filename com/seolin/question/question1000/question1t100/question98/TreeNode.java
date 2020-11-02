@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question98;
+package com.seolin.question.question1000.question1t100.question98;
 
 /**
  * 树的节点
