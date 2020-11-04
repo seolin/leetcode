@@ -49,26 +49,20 @@ import java.util.Stack;
  *
  * @author liangzi on 2020/11/4
  */
-public class Solution {
+public class Solution1 {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack();
-        Map<Character, Integer> character2NumMap = new HashMap<>();
-        character2NumMap.put('(', 1);
-        character2NumMap.put(')', -1);
-        character2NumMap.put('{', 2);
-        character2NumMap.put('}', -2);
-        character2NumMap.put('[', 3);
-        character2NumMap.put(']', -3);
+        Map<Character, Character> character2NumMap = new HashMap<>();
+        character2NumMap.put(')', '(');
+        character2NumMap.put('}', '{');
+        character2NumMap.put(']', '[');
         char[] words = s.toCharArray();
         for (int i = 0; i < words.length; i++) {
-            if (stack.empty()) {
-                stack.add(words[i]);
-            } else if (character2NumMap.get(words[i]) < 0) {
-                char c = stack.pop();
-                if (character2NumMap.get(c) + character2NumMap.get(words[i]) != 0) {
-                    stack.add(c);
-                    stack.add(words[i]);
+            if (character2NumMap.containsKey(words[i])) {
+                if (stack.isEmpty() || !stack.peek().equals(character2NumMap.get(words[i]))) {
+                    return false;
                 }
+                stack.pop();
             } else {
                 stack.add(words[i]);
             }
@@ -77,7 +71,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().isValid("(){}}{"));
-//        System.out.println(new Solution().isValid("{[]}"));
+        System.out.println(new Solution1().isValid("(){}}{"));
+        System.out.println(new Solution1().isValid("{[]}"));
+        System.out.println(new Solution1().isValid("]"));
+        System.out.println(new Solution1().isValid("()"));
     }
 }
