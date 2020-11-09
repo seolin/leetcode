@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question901t100.question941;
+package com.seolin.question.question1000.question901t1000.question941;
 //给定一个整数数组 A，如果它是有效的山脉数组就返回 true，否则返回 false。
 //
 // 让我们回顾一下，如果 A 满足下述条件，那么它是一个山脉数组：
