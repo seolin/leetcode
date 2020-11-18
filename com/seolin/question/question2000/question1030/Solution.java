@@ -48,6 +48,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
+ * 1030.距离顺序排列矩阵单元格
  * @author liangzi on 2020/11/17
  */
 public class Solution {
@@ -73,7 +74,7 @@ public class Solution {
 
     public static void main(String[] args) {
         // 输入：R = 2, C = 3, r0 = 1, c0 = 2
-//输出：[[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]
+        // 输出：[[1,2],[0,2],[1,1],[0,1],[1,0],[0,0]]
         System.out.println(Arrays.deepToString(new Solution().allCellsDistOrder(2, 3, 1, 2)));
     }
 }
