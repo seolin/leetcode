@@ -65,7 +65,7 @@ import java.util.Comparator;
  *
  * @author liangzi on 2020/11/23
  */
-public class Solution {
+public class Solution2 {
     public int findMinArrowShots(int[][] points) {
         int n = points.length;
         if (n == 0) {
@@ -75,23 +75,33 @@ public class Solution {
             return 1;
         }
         int count = 1;
-        Arrays.sort(points, Comparator.comparingInt(source -> source[1]));
-        System.out.println(Arrays.deepToString(points));
+        Arrays.sort(points, Comparator.comparingInt(source -> source[0]));
+        int currentLeft = points[0][0];
         int currentRight = points[0][1];
         for (int i = 1; i < n; i++) {
             int targetLeft = points[i][0];
             int targetRight = points[i][1];
             if (targetLeft > currentRight) {
                 count++;
+                currentLeft = targetLeft;
+                currentRight = targetRight;
+                continue;
+            }
+            if (currentLeft < targetLeft) {
+                currentLeft = targetLeft;
+            }
+            if (currentRight > targetRight) {
                 currentRight = targetRight;
             }
         }
         return count;
-
     }
 
+    //74029340
+    //65312321
+    //61001829
     public static void main(String[] args) {
         int[][] points = {{31176229, 84553602}, {59484421, 74029340}, {8413784, 65312321}, {34575198, 108169522}, {49798315, 88462685}, {29566413, 114369939}, {12776091, 37045071}, {11759956, 61001829}, {37806862, 80806032}, {82906996, 118404277}};
-        System.out.println(new Solution().findMinArrowShots(points));
+        System.out.println(new Solution2().findMinArrowShots(points));
     }
 }
