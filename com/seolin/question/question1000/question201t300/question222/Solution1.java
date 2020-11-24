@@ -63,7 +63,15 @@ public class Solution1 {
         return low;
     }
 
-
+    /**
+     * 判断是否存在
+     * 当前的k的最高位与当前层数相与，若为0表示第二层向左，若为1，则表示第二层向右
+     *
+     * @param root
+     * @param level
+     * @param k
+     * @return
+     */
     public boolean exists(TreeNode root, int level, int k) {
         int bits = 1 << (level - 1);
         TreeNode node = root;
