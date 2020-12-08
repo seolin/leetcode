@@ -68,41 +68,38 @@ import java.util.List;
  * @author liangzi on 2020/12/8
  */
 public class Solution {
+    //通过回溯 + 减枝 来实现
     public List<Integer> splitIntoFibonacci(String S) {
-        //回溯
         List<Integer> resultList = new ArrayList<>();
         backtrack(resultList, S, S.length(), 0, 0, 0);
         return resultList;
     }
-
-    public boolean backtrack(List<Integer> list, String S, int length, int index, int sum, int prev) {
-        //返回条件
+    public boolean backtrack(List<Integer> resultList, String S, int length, int index, int sum, int prev) {
+        //回溯最终识别条件：已经到最后一个
         if (index == length) {
-            return list.size() >= 3;
+            return resultList.size() > 2;
         }
-        long count = 0;
+        long currentCount = 0;
         for (int i = index; i < length; i++) {
-            //如果当前数长度超过1，则数的第一位不能为0
+            //减枝条件：如果数组长度大于1，则第一位不能为空
             if (i > index && S.charAt(index) == '0') {
                 break;
             }
-            count = count * 10 + S.charAt(i) - '0';
-            //不能超过Integer最大值
-            if (count > Integer.MAX_VALUE) {
-                break;
-            }
-            if (list.size() >= 2) {
-                if (sum > count) {
+            currentCount = currentCount * 10 + S.charAt(i) - '0';
+            if (resultList.size() > 1) {
+                //如果前两位总和大于当前数，则当前数继续循环变大
+                if (sum > currentCount) {
                     continue;
-                } else if (sum < count) {
+                    //减枝条件：如果前两位总和小于当前树，则说明不符合要求
+                } else if (currentCount > sum) {
                     break;
                 }
             }
-            list.add((int) count);
-            if (backtrack(list, S, length, i + 1, (int) (count + prev), (int) count)) {
+            resultList.add((int)currentCount);
+            if (backtrack(resultList, S, length, i + 1 ,(int)(prev + currentCount), (int)currentCount)) {
                 return true;
             } else {
-                list.remove(list.size() - 1);
+                resultList.remove(resultList.size() - 1);
             }
         }
         return false;
