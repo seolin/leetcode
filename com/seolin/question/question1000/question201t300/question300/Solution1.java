@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question300;
+package com.seolin.question.question1000.question201t300.question300;
 
 /**
  * @author liangzi on 2020/10/26

@@ -1,4 +1,4 @@
-package com.seolin.question.question1000.question236;
+package com.seolin.question.question1000.question201t300.question236;
 //236. 二叉树的最近公共祖先
 // 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
 //
