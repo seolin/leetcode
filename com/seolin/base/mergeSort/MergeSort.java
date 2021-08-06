@@ -14,7 +14,7 @@ public class MergeSort {
         merge(left, mid, right, nums);
     }
 
-    private void merge(int left, int mid, int right, int[] nums) {
+    public void merge(int left, int mid, int right, int[] nums) {
         int[] temp = new int[right - left + 1];
         int i = left;
         int j = mid + 1;
