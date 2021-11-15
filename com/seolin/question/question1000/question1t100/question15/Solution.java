@@ -48,36 +48,55 @@ import java.util.List;
  */
 public class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (nums.length < 3) {
-            return result;
+        int n = nums.length;
+        List<List<Integer>> ans = new ArrayList<>();
+        if (n <= 2) {
+            return ans;
         }
         Arrays.sort(nums);
-        for (int target = 0; target < nums.length - 2; target++) {
-            if (nums[target] > 0) {
-                break;
-            }
-            if (target > 0 && nums[target] == nums[target - 1]) {
+        for (int i = 0; i < n - 2; i++) {
+            if (nums[i] > 0) {
                 continue;
             }
-            int left = target + 1;
-            int right = nums.length - 1;
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int left = i + 1;
+            int right = n - 1;
             while (left < right) {
-                int sum = nums[target] + nums[left] + nums[right];
-                if (sum > 0) {
-                    while (left < right && nums[right] == nums[--right]) ;
-                } else if (sum < 0) {
-                    while (left < right && nums[left] == nums[++left]) ;
+                int temp = nums[left] + nums[right] + nums[i];
+                if (temp > 0) {
+                    right--;
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
+                } else if (temp < 0) {
+                    left++;
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
                 } else {
-                    List<Integer> subResult = new ArrayList<>();
-                    subResult.add(nums[target]);
-                    subResult.add(nums[left]);
-                    subResult.add(nums[right]);
-                    while (left < right && nums[left] == nums[++left]) ;
-                    while (left < right && nums[right] == nums[--right]) ;
+                    List<Integer> subAns = new ArrayList<>();
+                    subAns.add(nums[i]);
+                    subAns.add(nums[left]);
+                    subAns.add(nums[right]);
+                    ans.add(subAns);
+                    left++;
+                    right--;
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
                 }
             }
         }
-        return result;
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-2,0,1,1,2};
+        System.out.println(new Solution().threeSum(nums));
     }
 }
