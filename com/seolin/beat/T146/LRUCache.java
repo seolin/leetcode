@@ -1,4 +1,4 @@
-package com.seolin.beat.t146;
+package com.seolin.beat.T146;
 
 import java.util.HashMap;
 import java.util.Map;

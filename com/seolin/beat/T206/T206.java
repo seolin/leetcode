@@ -1,4 +1,4 @@
-package com.seolin.beat.t206;
+package com.seolin.beat.T206;
 
 /**
  * @author chenkangkang
