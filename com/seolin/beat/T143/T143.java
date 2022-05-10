@@ -42,12 +42,48 @@ package com.seolin.beat.T143;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
 /**
  * @author chenkangkang
  * @date 2022/5/7 5:52 PM
  **/
 public class T143 {
     public void reorderList(ListNode head) {
+        //1. 快慢指针找中点
+        //2. 反转中点之后的数据
+        //3. 通过临时记住下一个节点来
+        if (head == null) {
+            return;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        ListNode next = slow.next;
+        slow.next = null;
+        ListNode l2 = reverse(next);
+        ListNode l1 = head;
+        while (l2 != null) {
+            ListNode next1 = l1.next;
+            ListNode next2 = l2.next;
+            l1.next = l2;
+            l2.next = next1;
+            l2 = next2;
+            l1 = next1;
+        }
+    }
 
+    private ListNode reverse(ListNode node) {
+        ListNode pre = null;
+        ListNode cur = node;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
     }
 }
