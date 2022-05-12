@@ -78,6 +78,6 @@ public class Solution2 {
 
     public static void main(String[] args) {
         System.out.println(new Solution2().isValid("(){}}{"));
-//        System.out.println(new Solution().isValid("{[]}"));
+//        System.out.println(new Codec().isValid("{[]}"));
     }
 }

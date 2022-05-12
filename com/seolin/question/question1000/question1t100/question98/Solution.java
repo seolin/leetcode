@@ -74,7 +74,7 @@ public class Solution {
 //        treeNode2.left = treeNode3;
 //        treeNode2.right = treeNode4;
 //
-//        System.out.println(new Solution().isValidBST(root));
+//        System.out.println(new Codec().isValidBST(root));
 
 
         int[] tree = {1, 1};
