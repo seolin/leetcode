@@ -27,7 +27,7 @@ public class QuickSort2 {
             }
         }
         swap(nums, pivot, count);
-        return  count;
+        return count;
     }
 
     private static void swap(int[] nums, int i, int j) {
@@ -45,6 +45,5 @@ public class QuickSort2 {
         quickSort(arrs, 0, arrs.length);
         System.out.println(Arrays.toString(arrs));
     }
-
 
 }
